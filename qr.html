@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #video {
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" playsinline></video>
+
+    <script>
+        // Check if the browser supports getUserMedia
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            alert('Your browser does not support the camera API.');
+        } else {
+            const video = document.getElementById('video');
+
+            // Prompt user for camera access
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    video.srcObject = stream;
+                    video.play();
+
+                    // Initialize QR code scanner
+                    const qrScanner = new window.QRScanner(video, resultCallback);
+
+                    // Define callback function for QR code result
+                    function resultCallback(result) {
+                        alert('Scanned QR code content: ' + result);
+                    }
+
+                    // Start QR code scanning
+                    qrScanner.start();
+                })
+                .catch((error) => {
+                    console.error('Error accessing camera:', error);
+                    alert('Failed to access the camera. Please check camera permissions.');
+                });
+        }
+    </script>
+</body>
+</html>
