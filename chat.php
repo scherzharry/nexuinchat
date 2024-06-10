@@ -13,8 +13,8 @@ if (!isset($_SESSION['user_id'])) {
 
 // Database configuration
 $servername = "localhost";
-$username = "nexuinco_root";
-$password = "NexuinChat1234!!"; // Default password for XAMPP MySQL is empty
+$username = "nope";
+$password = "no-password-for-u"; // Default password for XAMPP MySQL is empty
 $database = "nexuinco_chatapp";
 
 // Create connection
@@ -456,8 +456,8 @@ if (!isset($_SESSION['user_id'])) {
 
 // Database configuration
 $servername = "localhost";
-$username = "nexuinco_root";
-$password = "NexuinChat1234!!"; // Default password for XAMPP MySQL is empty
+$username = "nope";
+$password = "no-password-for-u"; // Default password for XAMPP MySQL is empty
 $database = "nexuinco_chatapp";
 
 // Create connection
@@ -692,8 +692,8 @@ if (!isset($_SESSION['user_id'])) {
 
 // Database configuration
 $servername = "localhost";
-$username = "nexuinco_root";
-$password = "NexuinChat1234!!"; // Default password for XAMPP MySQL is empty
+$username = "nope";
+$password = "no-password-for-u"; // Default password for XAMPP MySQL is empty
 $database = "nexuinco_chatapp";
 
 // Create connection
@@ -747,8 +747,8 @@ if (!isset($_SESSION['user_id'])) {
 
 // Database configuration
 $servername = "localhost";
-$username = "nexuinco_root";
-$password = "NexuinChat1234!!"; // Default password for XAMPP MySQL is empty
+$username = "nope";
+$password = "no-password-for-u"; // Default password for XAMPP MySQL is empty
 $database = "nexuinco_chatapp";
 
 // Create connection
@@ -1674,12 +1674,6 @@ if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
         
         // Output the scanned QR code using PHP
         echo '<p>Scanned QR code: <strong>' . htmlspecialchars($scannedQR) . '</strong></p>';
-
-        // Process the scanned QR code (insert into database, etc.)
-        $servername = "localhost";
-$username = "nexuinco_root";
-$password = "NexuinChat1234!!"; // Default password for XAMPP MySQL is empty
-$database = "nexuinco_chatapp";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $database);
